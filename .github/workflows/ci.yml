@@ -33,6 +33,13 @@ jobs:
         uses: actions/attest-build-provenance@v1
         with:
           subject-path: '1.txt'
+
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: 1.txt
+    
       - name: Generate list using Markdown
         run: |
           echo "This is the lead in sentence for the list" >> $GITHUB_STEP_SUMMARY
